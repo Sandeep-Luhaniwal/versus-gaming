@@ -13,9 +13,10 @@ const Notifications = ({ setActiveBellIcon }) => {
 
     return (
         <>
+            <div className='absolute top-0 w-full h-full'>
             <div onClick={() => setActiveBellIcon(false)} className='bg-black opacity-[0.4] absolute z-10 w-full min-h-full h-full top-0 end-0'></div>
-            <div className={`container max-w-[1440px] w-full mx-auto flex justify-end`}>
-                <div className={`sm:me-24 md:me-36 lg:me-36 mt-4 max-w-[440px] relative z-20 w-full bg-black-500 border-b-[1px] border-lightBlack rounded-xl`}>
+            <div className={`container max-w-[1440px] xl:px-6 w-full mx-auto flex justify-end`}>
+                <div className={`sm:me-24 md:me-36 lg:me-36 mt-[72px] max-w-[440px] relative z-20 w-full bg-black-500 border-b-[1px] border-lightBlack rounded-xl`}>
                     <div className="flex flex-col py-4 ps-4">
                         <div className="max-h-[544px] overflow-y-scroll scroll-smooth pe-4 flex gap-4 flex-col">
                             {notificationsData.map((data, index) => {
@@ -54,6 +55,7 @@ const Notifications = ({ setActiveBellIcon }) => {
                             }
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </>

@@ -17,7 +17,7 @@ const Signup = ({ setActiveButton, setShowLogin }) => {
         <>
             <div className="z-40 w-full absolute top-[49px] sm:top-[57px]">
                 <div onClick={() => setActiveButton(false)} className='absolute bg-black opacity-[0.4] z-20 w-full min-h-full h-full top-0 start-0'></div>
-                <div className="container  max-w-[1440px] mx-auto py-3 min-h-[calc(100vh-49px)] sm:min-h-[calc(100vh-57px)] flex justify-center items-center">
+                <div className="container  max-w-[1440px] xl:px-6 mx-auto py-3 min-h-[calc(100vh-49px)] sm:min-h-[calc(100vh-57px)] flex justify-center items-center">
                     <div className="!max-w-[480px] !w-full bg-black-500 rounded-xl z-40 relative">
                         <div className="flex justify-between items-center px-4 py-3 border-b-[1px] border-lightBlack">
                             <p className='uppercase font-bold leading-4 text-white text-md font-normalidad'>Sing up</p>

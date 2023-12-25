@@ -65,31 +65,24 @@ export const WalletIcon = ({ walletActive }) => {
     );
 };
 //DOWN ARROW ICON
-export const DownArrowIcon = ({ show, location }) => {
+export const DownArrowIcon = ({ show, location, activeProfile, width = 5, height = 4 }) => {
     return (
-        <svg width="5" height="4" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path className={`${show ? "fill-green-yellow" : ""} ${location ? "fill-green-yellow" : ""} group-hover:fill-green-yellow transition-all`} d="M2.74679 3.45432C2.58188 3.64908 2.28868 3.64908 2.12377 3.45432L0.138498 1.10978C-0.0956834 0.833216 0.0943817 0.400391 0.450007 0.400391L4.42055 0.400391C4.77618 0.400391 4.96624 0.833217 4.73206 1.10978L2.74679 3.45432Z" fill="#4D545E" />
+        <svg width={width} height={height} viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path className={`${show ? "fill-green-yellow" : ""} ${activeProfile ? "fill-green-yellow" : ""} ${location ? "fill-green-yellow" : ""} group-hover:fill-green-yellow transition-all`} d="M2.74679 3.45432C2.58188 3.64908 2.28868 3.64908 2.12377 3.45432L0.138498 1.10978C-0.0956834 0.833216 0.0943817 0.400391 0.450007 0.400391L4.42055 0.400391C4.77618 0.400391 4.96624 0.833217 4.73206 1.10978L2.74679 3.45432Z" fill="#4D545E" />
         </svg>
     );
 };
 //V LOGO ICON
 export const VpagelogoIcon = () => {
     return (
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg  width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9.25807 9.76364C9.54776 9.38813 11.0371 6.80422 9.60108 4.35662C8.87561 3.1201 7.68658 2.41348 5.46858 1.7998H6.83079C8.98715 1.7998 10.6572 2.03257 11.399 2.92377C13.3998 5.32764 9.80993 9.27522 9.25807 9.76364Z" fill="black" />
             <path d="M7.9322 10.5732C7.9322 10.5732 7.63951 10.6643 7.3157 10.6643C6.90306 10.6643 6.51503 10.5616 6.17519 10.3799C5.88121 10.225 5.62255 10.0101 5.41731 9.7525L0 1.7998H3.01326L7.31561 8.22293C7.31561 8.22293 7.32093 8.21865 7.33164 8.20904C7.52086 8.04444 9.03645 6.54368 8.32786 4.31393C8.73518 4.71156 9.15201 5.32301 9.2675 6.29145C9.54322 8.59922 8.26365 10.2303 7.93229 10.5734L7.9322 10.5732Z" fill="black" />
         </svg>
 
     );
 };
-//LOGIN ARROW ICON
-export const LoginArrowIcon = () => {
-    return (
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8.86725 10.1805C8.61988 10.4726 8.18009 10.4726 7.93273 10.1805L4.95482 6.66369C4.60355 6.24885 4.88864 5.59961 5.42208 5.59961L11.3779 5.59961C11.9113 5.59961 12.1964 6.24885 11.8452 6.66369L8.86725 10.1805Z" fill="#4D545E" />
-        </svg>
-    );
-};
+
 //GOOGLE ICON
 export const GoogleIcon = () => {
     return (
@@ -116,9 +109,9 @@ export const TwitchIcon = ({ fill, width = 17, height = 16, isWhite }) => {
     const hoverClass = isWhite ? 'group-hover:fill-white' : 'group-hover:fill-black';
     return (
         <svg className="cursor-pointer" width={width} height={height} viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path className={`transition duration-300 ${hoverClass}`} d="M4.83301 2L2.33301 4.32143V12.6786H5.33301V15L7.83301 12.6786H9.83301L14.333 8.5V2H4.83301ZM13.333 8.03571L11.333 9.89286H9.33301L7.58301 11.5179V9.89286H5.33301V2.92857H13.333V8.03571Z" fill={fill} />
-            <path className={`transition duration-300 ${hoverClass}`} d="M11.8331 4.55356H10.8331V7.33927H11.8331V4.55356Z" fill={fill} />
-            <path className={`transition duration-300 ${hoverClass}`} d="M9.08308 4.55356H8.08308V7.33927H9.08308V4.55356Z" fill={fill} />
+            <path className={`transition-all duration-300 ${hoverClass}`} d="M4.83301 2L2.33301 4.32143V12.6786H5.33301V15L7.83301 12.6786H9.83301L14.333 8.5V2H4.83301ZM13.333 8.03571L11.333 9.89286H9.33301L7.58301 11.5179V9.89286H5.33301V2.92857H13.333V8.03571Z" fill={fill} />
+            <path className={`transition-all duration-300 ${hoverClass}`} d="M11.8331 4.55356H10.8331V7.33927H11.8331V4.55356Z" fill={fill} />
+            <path className={`transition-all duration-300 ${hoverClass}`} d="M9.08308 4.55356H8.08308V7.33927H9.08308V4.55356Z" fill={fill} />
         </svg>
     );
 };

@@ -43,8 +43,8 @@ const Header = () => {
     return (
         <>
             <nav className='bg-lightBlack border-b-[1px] border-lightGrey overflow-hidden'>
-                <div className="container max-w-[1440px] mx-auto">
-                    <div className="flex items-center h-12 sm:h-14 justify-between w-full xl:px-3">
+                <div className="container max-w-[1440px] mx-auto xl:px-6">
+                    <div className="flex items-center h-12 sm:h-14 justify-between w-full">
                         <div className="flex items-center h-full">
                             <div className="lg:pe-5 xl:pe-6 lg:border-e-[2px] border-lightGrey h-full flex items-center">
                                 <Link href="/">
@@ -92,9 +92,9 @@ const Header = () => {
                             <span onClick={() => setWalletActive(true)} className="group">
                                 <WalletIcon walletActive={walletActive} />
                             </span>
-                            <div onClick={() => setActiveProfile(true)} className="flex items-center gap-[2px] cursor-pointer">
+                            <div onClick={() => setActiveProfile(true)} className="flex group items-center gap-[7px] cursor-pointer">
                                 <Image src="/assets/images/png/login-img.png" height={24} width={24} alt='login page image' className='border-[1px] rounded-full border-lightBlack' />
-                                <LoginArrowIcon />
+                                <DownArrowIcon activeProfile={activeProfile} width={8} height={6} />
                             </div>
                             <div className="lg:hidden">
                                 <div onClick={() => setMenu(true)}>

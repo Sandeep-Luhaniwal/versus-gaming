@@ -98,18 +98,22 @@ export const loginData = [
     {
         icon: <SettingIcon />,
         title: "Settings",
+        url: "/settings",
     },
     {
         icon: <EditProfileIcon />,
         title: "Edit Profile",
+        url: "/settings",
     },
     {
         icon: <LockIcon />,
         title: "Security",
+        url: "/settings",
     },
     {
         icon: <CompeteIcon />,
         title: "My games",
+        url: "/settings",
     },
 ];
 // NOTIFICATION DATA END

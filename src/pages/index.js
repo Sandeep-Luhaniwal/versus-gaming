@@ -9,6 +9,7 @@ export default function Home() {
         <title>Versus</title>
       </Head>
       <Header />
+      <h1 className="text-white">hey Hello</h1>
       {/* <Wallet /> */}
     </>
   )
