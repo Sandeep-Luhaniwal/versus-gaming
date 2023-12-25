@@ -21,3 +21,13 @@ input:-webkit-autofill {
     -webkit-transition: background-color 5000s ease-in-out 0s !important;
     transition: background-color 5000s ease-in-out 0s !important;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D4FF27;
+    border-radius: 5px;
+    height: 20px !important;
+}

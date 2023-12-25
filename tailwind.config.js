@@ -30,7 +30,8 @@ module.exports = {
         "black-400": "#4D545E",
         "black-500": "#0D1012",
         "black-600": "#090B0C",
-        "green-yellow": "#D4FF27"
+        "green-yellow": "#D4FF27",
+        "red-orange": "#FE3838",
       },
     },
   },

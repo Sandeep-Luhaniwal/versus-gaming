@@ -8,6 +8,8 @@ import Login from './Login'
 import Gamepad from './Gamepad'
 import SelectRegion from './SelectRegion'
 import Wallet from './Wallet'
+import Notifications from './Notifications'
+import ProfileView from './ProfileView'
 
 const Header = () => {
     const router = useRouter();
@@ -17,6 +19,8 @@ const Header = () => {
     const [walletActive, setWalletActive] = useState(false);
     const [activeLink, setActiveLink] = useState(false);
     const [activeButton, setActiveButton] = useState(false);
+    const [activeBellIcon, setActiveBellIcon] = useState(false);
+    const [activeProfile, setActiveProfile] = useState(false);
 
     useEffect(() => {
         // Iterate through navLinks and check if the current URL matches any of the links
@@ -81,14 +85,14 @@ const Header = () => {
                                 <VpagelogoIcon />
                                 membership
                             </button>
-                            <div className="relative group">
-                                <BellIcon />
-                                <div className="h-4 w-4 group-hover:bg-white rounded-full bg-green-yellow flex justify-center items-center font-normalidad text-sm font-normal absolute top-[-8px] end-[-8px]">2</div>
+                            <div onClick={() => setActiveBellIcon(true)} className="relative hover:translate-x-[-2px] transition-all duration-300">
+                                <BellIcon activeBellIcon={activeBellIcon} />
+                                <div className={`${activeBellIcon ? "!hidden" : " "} h-4 w-4 rounded-full bg-green-yellow flex justify-center items-center font-normalidad text-sm font-normal absolute top-[-8px] end-[-8px]`}>5</div>
                             </div>
-                            <span onClick={()=>setWalletActive(true)} className="group">
+                            <span onClick={() => setWalletActive(true)} className="group">
                                 <WalletIcon walletActive={walletActive} />
                             </span>
-                            <div className="flex items-center gap-[2px] cursor-pointer">
+                            <div onClick={() => setActiveProfile(true)} className="flex items-center gap-[2px] cursor-pointer">
                                 <Image src="/assets/images/png/login-img.png" height={24} width={24} alt='login page image' className='border-[1px] rounded-full border-lightBlack' />
                                 <LoginArrowIcon />
                             </div>
@@ -138,6 +142,8 @@ const Header = () => {
             {show ? <Gamepad setShow={setShow} /> : ''}
             {location ? <SelectRegion setLocation={setLocation} /> : ''}
             {walletActive ? <Wallet setWalletActive={setWalletActive} /> : ''}
+            {activeBellIcon ? <Notifications setActiveBellIcon={setActiveBellIcon} /> : ''}
+            {activeProfile ? <ProfileView setActiveProfile={setActiveProfile} /> : ''}
         </>
     )
 }

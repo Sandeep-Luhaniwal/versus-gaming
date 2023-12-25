@@ -14,7 +14,7 @@ const Login = ({ setActiveButton }) => {
 
     return (
         <>
-            <div onClick={() => setActiveButton(false)} className='absolute z-20 w-full min-h-full h-full top-0 start-0'></div>
+            <div onClick={() => setActiveButton(false)} className='absolute bg-black opacity-[0.4] z-20 w-full min-h-full h-full top-0 start-0'></div>
             <div className="container max-w-[1440px] mx-auto py-3 min-h-[calc(100vh-75px)] sm:min-h-[calc(100vh-81px)] flex justify-center items-center">
                 <div className="!max-w-[480px] !w-full bg-black-500 rounded-xl relative z-30">
                     <div className="flex justify-between items-center px-4 py-3 border-b-[1px] border-lightBlack">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BlackArrowDownIcon, BlackArrowRightIcon, EuroIcon, GreyArrowRightIcon, YellowArrowUpIcon } from './Icons'
+import { BlackArrowDownIcon, BlackArrowRightIcon, CrossIcon, EuroIcon, GreyArrowRightIcon, YellowArrowUpIcon } from './Icons'
 import Image from 'next/image'
 import { depositData } from './Helper';
 
@@ -19,7 +19,7 @@ const Wallet = ({ setWalletActive }) => {
 
     return (
         <>
-            <div onClick={() => setWalletActive(false)} className='absolute z-10 w-full min-h-full h-full top-0 end-0'></div>
+            <div onClick={() => setWalletActive(false)} className='absolute bg-black opacity-[0.4] z-10 w-full min-h-full h-full top-0 end-0'></div>
             <div className={`container max-w-[1440px] w-full mx-auto flex justify-end`}>
                 <div className={`sm:me-12 md:me-24 lg:me-16 mt-4 max-w-[480px] relative z-20 w-full bg-black-500 border-b-[1px] border-lightBlack rounded-xl`}>
                     <div className={`p-4 sm:p-6 ${activetab === "First" ? "hidden" : ""} ${activetab === "Second" ? "hidden" : ""}`}>
@@ -47,7 +47,7 @@ const Wallet = ({ setWalletActive }) => {
                         <div className={`${show ? "hidden" : ""}`}>
                             <div className='px-4 py-3 border-b-[1px] border-lightBlack'>
                                 <p className="text-white flex uppercase font-normalidad font-bold fs-md leading-4 items-center">
-                                    <span onClick={() => setActiveTab(false)} className='me-2'><GreyArrowRightIcon /></span>
+                                    <span onClick={() => setActiveTab(false)} className='me-2 group transition-all duration-300'><GreyArrowRightIcon /></span>
                                     deposit
                                 </p>
                             </div>
@@ -56,7 +56,7 @@ const Wallet = ({ setWalletActive }) => {
                                     return (
                                         <div key={index} className={`${data.style} flex justify-between p-2 ps-4 bg-lightBlack items-center rounded-xl`}>
                                             <p className="text-white text-lg font-normalidad font-medium leading-5 tracking-[0.2px]">€ {data.title}</p>
-                                            <button onClick={() => handleDeposit(data.title)} className='bg-green-yellow border-0 flex items-center gap-2 text-md font-medium font-normalidad text-black leading-4 p-3 ps-4 tracking-[0.16px] uppercase rounded-xl'>{data.button} <BlackArrowRightIcon /></button>
+                                            <button onClick={() => handleDeposit(data.title)} className='bg-green-yellow border-0 flex items-center gap-2 text-md font-medium font-normalidad text-black leading-4 p-3 ps-4 tracking-[0.16px] uppercase rounded-xl hover:bg-white transition-all duration-300'>{data.button} <BlackArrowRightIcon /></button>
                                         </div>
                                     )
                                 })}
@@ -70,22 +70,52 @@ const Wallet = ({ setWalletActive }) => {
                         <>
                             <div className='px-4 py-3 border-b-[1px] border-lightBlack'>
                                 <p className="text-white flex uppercase font-normalidad font-bold fs-md leading-4 items-center">
-                                    <span onClick={() => setActiveTab(false)} className='me-2'><GreyArrowRightIcon /></span>
+                                    <span onClick={() => setActiveTab(false)} className='me-2 group transition-all duration-300'><GreyArrowRightIcon /></span>
                                     Withdraw
                                 </p>
                             </div>
-                            <div className="p-4 sm:p-6">
+                            <div className="p-4 sm:p-6 border-b-[1px] border-lightBlack">
+                                <p className="text-white text-md leading-6 tracking-[0.16px] font-normalidad pb-2">
+                                    Credits to be withdrawn
+                                </p>
+                                <div className="p-4 bg-black rounded-xl border-[1px] border-lightBlack border-solid">
+                                    <p className='text-white font-normalidad text-xl leading-6 font-bold'>
+                                        <span className="text-green-yellow">€</span> {" "}1.950,50
+                                    </p>
+                                </div>
+                                <div className="p-4 my-4 rounded-xl border-[1px] border-lightBlack border-solid">
+                                    <div className="flex justify-between pb-3 border-b-[1px] border-lightBlack border-solid">
+                                        <p className='font-normalidad text-sm text-grey-400 tracking-[0.14px] leading-4'>Total value that will be withdrawn</p>
+                                        <p className='font-normalidad text-sm text-grey-400 tracking-[0.14px] leading-4'>€ 1.950,50</p>
+                                    </div>
+                                    <div className="flex justify-between pt-3">
+                                        <p className='font-normalidad text-sm text-grey-400 tracking-[0.14px] leading-4'>Your balance after withdraw</p>
+                                        <p className='font-normalidad text-sm text-grey-400 tracking-[0.14px] leading-4'>€ 0,00</p>
+                                    </div>
+                                </div>
+                                <p className='sm:pe-3 font-normalidad font-normal text-sm text-grey-400'>
+                                    Your payment will be processed by PayPal. Review their{" "} <span className="text-green-yellow">Privacy Policy here {" "}</span>.
+                                    By clicking "Complete Purchase", you agree to the {" "} <span className="text-green-yellow">Terms of Service</span>{" "}& {" "} <span className="text-green-yellow">Terms of Sale</span>.
+                                </p>
+                            </div>
 
+                            <div className="p-4">
+                                <button className='py-4 px-1 bg-green-yellow w-full text-md font-medium font-normalidad text-black leading-4 tracking-[0.16px] uppercase rounded-xl hover:bg-white transition-all duration-300'>
+                                    Withdraw
+                                </button>
                             </div>
                         </>
                     )}
                     {show && (
                         <>
-                            <div className='px-4 py-3 border-b-[1px] border-lightBlack'>
+                            <div className='px-4 py-3 border-b-[1px] border-lightBlack flex justify-between items-center'>
                                 <p className="text-white flex uppercase font-normalidad font-bold fs-md leading-4 items-center">
-                                    <span onClick={() => setShow(false)} className='me-2'><GreyArrowRightIcon /></span>
+                                    <span onClick={() => setShow(false)} className='me-2 group transition-all duration-300'><GreyArrowRightIcon /></span>
                                     Deposit
                                 </p>
+                                <div onClick={() => setWalletActive(false)} className="group">
+                                    <CrossIcon />
+                                </div>
                             </div>
                             <div className="p-4 sm:p-6 border-b-[1px] border-lightBlack">
                                 <div className="p-4 bg-black-500 rounded-xl border-[1px] border-lightGrey">

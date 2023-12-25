@@ -4,7 +4,7 @@ const SelectRegion = ({setLocation}) => {
   return (
       <>
           <div className='absolute min-h-full top-0 start-0 w-full overflow-hidden'>
-              <div onClick={() => setLocation(false)} className='absolute z-10 w-full min-h-full h-full top-0 start-0'></div>
+              <div onClick={() => setLocation(false)} className='absolute bg-black opacity-[0.4] z-10 w-full min-h-full h-full top-0 start-0'></div>
               <div className="relative z-20 top-16 start-[220px] xl:start-[20%] w-[116px]">
                   <div className="flex gap-1 bg-black-600 p-2 rounded-xl">
                       <div className="w-12 h-12 bg-lightBlack rounded-lg flex justify-center items-center group/item hover:bg-lightGrey transition-all duration-300">
