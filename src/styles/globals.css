@@ -22,6 +22,10 @@ input:-webkit-autofill {
     transition: background-color 5000s ease-in-out 0s !important;
 }
 
+.whitautofill input:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
 }

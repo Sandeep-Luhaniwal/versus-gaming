@@ -1,4 +1,4 @@
-import { TwitchIcon, DiscordIcon, GoogleIcon, TeamIcon, CompetitionIcon, MegaPhoneIcon, TrophyIcon, SettingIcon, EditProfileIcon, LockIcon, CompeteIcon } from "./Icons";
+import { TwitchIcon, DiscordIcon, GoogleIcon, TeamIcon, CompetitionIcon, MegaPhoneIcon, TrophyIcon, SettingIcon, EditProfileIcon, LockIcon, CompeteIcon, TwitterIcon, YoutubeIcon, InstagramIcon } from "./Icons";
 
 // NAVLINK DATA START
 export const navLinks = [
@@ -116,5 +116,44 @@ export const loginData = [
         url: "/settings",
     },
 ];
-// NOTIFICATION DATA END
+// LOGIN DATA END
+// LOGIN FORM DATA START
+export const loginFormData = [
+    {
+        icon: <TwitterIcon fill="white" />,
+        title: "Twitter",
+        style: "md:pe-3",
+        description: "accounttwitter",
+        placeholder: "Your social username here",
+    },
+    {
+        icon: <TwitchIcon fill="white" />,
+        title: "Twitch",
+        style: "md:ps-3",
+        description: "accounttwitch",
+        placeholder: "Your social username here",
+    },
+    {
+        icon: <YoutubeIcon fill="white" />,
+        title: "Youtube",
+        style: "md:pe-3",
+        description: "accountyoutube",
+        placeholder: "Your social username here",
+    },
+    {
+        icon: <InstagramIcon fill="white" />,
+        title: "Instagram",
+        style: "md:ps-3",
+        description: "accountinstagram",
+        placeholder: "Your social username here",
+    },
+    {
+        icon: <DiscordIcon fill="white" />,
+        title: "Discrod",
+        style: "md:pe-3",
+        description: "accountdiscrod",
+        placeholder: "Your social username here",
+    },
+];
+// LOGIN FORM DATA END
 

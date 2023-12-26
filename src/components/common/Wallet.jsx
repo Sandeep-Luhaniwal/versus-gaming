@@ -96,7 +96,7 @@ const Wallet = ({ setWalletActive }) => {
                                     </div>
                                     <p className='sm:pe-3 font-normalidad font-normal text-sm text-grey-400'>
                                         Your payment will be processed by PayPal. Review their{" "} <span className="text-green-yellow">Privacy Policy here {" "}</span>.
-                                        By clicking "Complete Purchase", you agree to the {" "} <span className="text-green-yellow">Terms of Service</span>{" "}& {" "} <span className="text-green-yellow">Terms of Sale</span>.
+                                        By clicking &quot;Complete Purchase&quot;, you agree to the {" "} <span className="text-green-yellow">Terms of Service</span>{" "}& {" "} <span className="text-green-yellow">Terms of Sale</span>.
                                     </p>
                                 </div>
 
@@ -135,7 +135,7 @@ const Wallet = ({ setWalletActive }) => {
                                     </div>
                                     <p className='pt-4 sm:pe-3 sm:pt-6 font-normalidad font-normal text-sm text-grey-400'>
                                         Your payment will be processed by PayPal. Review their{" "} <span className="text-green-yellow">Privacy Policy here {" "}</span>.
-                                        By clicking "Complete Purchase", you agree to the {" "} <span className="text-green-yellow">Terms of Service</span>{" "}& {" "} <span className="text-green-yellow">Terms of Sale</span>.</p>
+                                        By clicking &quot;Complete Purchase&quot;, you agree to the {" "} <span className="text-green-yellow">Terms of Service</span>{" "}& {" "} <span className="text-green-yellow">Terms of Sale</span>.</p>
                                 </div>
                                 <div className="p-4">
                                     <button className='py-4 px-1 text-[14px] bg-green-yellow w-full sm:text-md font-medium font-normalidad text-black leading-4 tracking-[0.16px] uppercase rounded-xl hover:bg-white transition-all duration-300'>
