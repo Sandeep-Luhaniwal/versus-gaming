@@ -4,12 +4,12 @@ import { BellIcon, CrossIcon, DownArrowIcon, GamepadIcon, LocationTargetIcon, Lo
 import { navLinks } from './Helper'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import Login from './Login'
-import Gamepad from './Gamepad'
-import SelectRegion from './SelectRegion'
-import Wallet from './Wallet'
-import Notifications from './Notifications'
-import ProfileView from './ProfileView'
+import Login from '../form/Login'
+import SelectRegion from '../SelectRegion'
+import Wallet from '../Wallet'
+import Notifications from '../Notifications'
+import ProfileView from '../setting/ProfileView'
+import Gamepad from '../Gamepad'
 
 const Header = () => {
     const router = useRouter();

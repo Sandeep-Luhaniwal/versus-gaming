@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { CrossIcon, EyeCloseIcon, EyeIcon, GoogleIcon } from './Icons'
-import { loginIconData } from './Helper'
+import { CrossIcon, EyeCloseIcon, EyeIcon } from '../common/Icons'
 import Link from 'next/link'
 import Signup from './Signup'
+import { loginIconData } from '../common/Helper'
+
 
 const Login = ({ setActiveButton }) => {
     const [show, setShow] = useState('password');

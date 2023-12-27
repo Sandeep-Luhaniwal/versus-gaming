@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { BlackArrowDownIcon, BlackArrowRightIcon, CrossIcon, EuroIcon, GreyArrowRightIcon, YellowArrowUpIcon } from './Icons'
+import { BlackArrowDownIcon, BlackArrowRightIcon, CrossIcon, EuroIcon, GreyArrowRightIcon, YellowArrowUpIcon } from './common/Icons'
 import Image from 'next/image'
-import { depositData } from './Helper';
+import { depositData } from './common/Helper';
 
 const Wallet = ({ setWalletActive }) => {
     const [activetab, setActiveTab] = useState(true);
@@ -23,20 +23,20 @@ const Wallet = ({ setWalletActive }) => {
                 <div onClick={() => setWalletActive(false)} className='absolute bg-black opacity-[0.4] z-10 w-full min-h-full h-full top-0 end-0'></div>
                 <div className={`container max-w-[1440px] xl:px-6 w-full mx-auto flex justify-end`}>
                     <div className={`sm:me-12 md:me-24 lg:me-16 mt-[72px] max-w-[480px] relative z-20 w-full bg-black-500 border-b-[1px] border-lightBlack rounded-xl`}>
-                        <div className={`p-4 sm:p-6 ${activetab === "First" ? "hidden" : ""} ${activetab === "Second" ? "hidden" : ""}`}>
+                        <div className={`p-4 sm:p-6 ${activetab === "Deposit" ? "hidden" : ""} ${activetab === "Withdraw" ? "hidden" : ""}`}>
                             <div className={`p-4 sm:p-6 bg-lightBlack rounded-xl relative overflow-hidden`}>
                                 <Image priority className='absolute bottom-0 right-0 object-contain h-full' src='/assets/images/png/Versus-Icon.png' height={100} width={133} alt='versus icon' />
                                 <p className='text-md text-grey-400 font-normalidad leading-4 tracking-[0.16px]'>Balance</p>
                                 <p className='text-xl pt-3 font-bold uppercase text-white font-normalidad flex leading-6 tracking-[0.16px]'><EuroIcon /><span className='ms-3'>1.950,50</span></p>
                             </div>
                             <div className={`flex pt-4 gap-4 w-full`}>
-                                <div onClick={() => handleTabClick("First")} className={`p-4 sm:p-6 bg-green-yellow cursor-pointer rounded-xl w-full group `}>
+                                <div onClick={() => handleTabClick("Deposit")} className={`p-4 sm:p-6 bg-green-yellow cursor-pointer rounded-xl w-full group `}>
                                     <BlackArrowDownIcon />
                                     <p className={`text-md pt-4 font-medium uppercase text-black font-normalidad flex leading-4 tracking-[0.16px]`}>
                                         Deposit
                                     </p>
                                 </div>
-                                <div onClick={() => handleTabClick("Second")} className={`${activetab === "Second" ? " !bg-green-yellow" : ""} p-4 sm:p-6 bg-lightBlack cursor-pointer rounded-xl w-full group `}>
+                                <div onClick={() => handleTabClick("Withdraw")} className={`${activetab === "Withdraw" ? " !bg-green-yellow" : ""} p-4 sm:p-6 bg-lightBlack cursor-pointer rounded-xl w-full group `}>
                                     <YellowArrowUpIcon />
                                     <p className={`text-md pt-4 font-medium uppercase text-white font-normalidad flex leading-4 tracking-[0.16px]`}>
                                         Withdraw
@@ -44,7 +44,7 @@ const Wallet = ({ setWalletActive }) => {
                                 </div>
                             </div>
                         </div>
-                        {activetab === "First" && (
+                        {activetab === "Deposit" && (
                             <div className={`${show ? "hidden" : ""}`}>
                                 <div className='px-4 py-3 border-b-[1px] border-lightBlack'>
                                     <p className="text-white flex uppercase font-normalidad font-bold fs-md leading-4 items-center">
@@ -67,7 +67,7 @@ const Wallet = ({ setWalletActive }) => {
                                 </div>
                             </div>
                         )}
-                        {activetab === "Second" && (
+                        {activetab === "Withdraw" && (
                             <>
                                 <div className='px-4 py-3 border-b-[1px] border-lightBlack'>
                                     <p className="text-white flex uppercase font-normalidad font-bold fs-md leading-4 items-center">

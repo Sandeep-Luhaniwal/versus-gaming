@@ -1,5 +1,5 @@
 import Header from '@/components/common/Header'
-import SettingTab from '@/components/common/SettingTab'
+import SettingTab from '@/components/profile/SettingTab'
 import React from 'react'
 
 const index = () => {

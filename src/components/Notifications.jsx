@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BellIcon, RedCrossIcon, YellowRightIcon } from './Icons';
-import { notificationsData } from './Helper';
+import { BellIcon, RedCrossIcon, YellowRightIcon } from './common/Icons';
+import { notificationsData } from './common/Helper';
 
 const Notifications = ({ setActiveBellIcon }) => {
     const [close, setClose] = useState(notificationsData.map(() => true));

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import { CrossIcon, RemoveIcon, UploadImageIcon } from './Icons';
+import { CrossIcon, RemoveIcon, UploadImageIcon } from '../common/Icons';
 
 const UploadNewImage = ({ setUploadImage }) => {
     const [selectedImage, setSelectedImage] = useState(null);

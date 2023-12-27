@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { CrossIcon, EyeCloseIcon, EyeIcon, GoogleIcon } from './Icons'
-import { loginIconData } from './Helper'
+import { CrossIcon, EyeCloseIcon, EyeIcon } from '../common/Icons'
+import { loginIconData } from '../common/Helper'
 import Link from 'next/link'
 
 const Signup = ({ setActiveButton, setShowLogin }) => {

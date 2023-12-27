@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import { DiscordIcon, SignOutIcon, TeamIcon, TwitchIcon, TwitterIcon, YoutubeIcon } from './Icons'
-import { loginData } from './Helper'
+import { DiscordIcon, SignOutIcon, TeamIcon, TwitchIcon, TwitterIcon, YoutubeIcon } from '../common/Icons'
+import { loginData } from '../common/Helper'
 import Link from 'next/link'
 
 const ProfileView = ({ setActiveProfile }) => {

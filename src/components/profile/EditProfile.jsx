@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { CircleCrossIcon, ImageIcon, UploadImageIcon } from './Icons'
-import { loginFormData } from './Helper';
+import { CircleCrossIcon, ImageIcon, UploadImageIcon } from '../common/Icons'
+import { loginFormData } from '../common/Helper';
 import UploadNewImage from './UploadNewImage';
 
 const EditProfile = () => {

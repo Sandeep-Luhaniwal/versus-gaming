@@ -286,8 +286,8 @@ export const SettingIcon = () => {
 export const EditProfileIcon = ({ activeTab }) => {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path className={`${activeTab === "first" ? "fill-white" : ""} group-hover:fill-white transition-all duration-300`} d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z" fill="#4D545E" />
-            <path className={`${activeTab === "first" ? "fill-white" : ""} group-hover:fill-white transition-all duration-300`} d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z" fill="#4D545E" />
+            <path className={`${activeTab === "editProfile" ? "fill-white" : ""} group-hover:fill-white transition-all duration-300`} d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z" fill="#4D545E" />
+            <path className={`${activeTab === "editProfile" ? "fill-white" : ""} group-hover:fill-white transition-all duration-300`} d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z" fill="#4D545E" />
         </svg>
 
     );
@@ -296,7 +296,7 @@ export const EditProfileIcon = ({ activeTab }) => {
 export const LockIcon = ({ activeTab }) => {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path className={`${activeTab === "second" ? "stroke-white" : ""} group-hover:stroke-white transition-all duration-300`} d="M4.66667 7.33301V4.66634C4.66667 3.78229 5.01786 2.93444 5.64298 2.30932C6.2681 1.6842 7.11595 1.33301 8 1.33301C8.88406 1.33301 9.7319 1.6842 10.357 2.30932C10.9821 2.93444 11.3333 3.78229 11.3333 4.66634V7.33301M3.33333 7.33301H12.6667C13.403 7.33301 14 7.92996 14 8.66634V13.333C14 14.0694 13.403 14.6663 12.6667 14.6663H3.33333C2.59695 14.6663 2 14.0694 2 13.333V8.66634C2 7.92996 2.59695 7.33301 3.33333 7.33301Z" stroke="#4D545E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path className={`${activeTab === "security" ? "stroke-white" : ""} group-hover:stroke-white transition-all duration-300`} d="M4.66667 7.33301V4.66634C4.66667 3.78229 5.01786 2.93444 5.64298 2.30932C6.2681 1.6842 7.11595 1.33301 8 1.33301C8.88406 1.33301 9.7319 1.6842 10.357 2.30932C10.9821 2.93444 11.3333 3.78229 11.3333 4.66634V7.33301M3.33333 7.33301H12.6667C13.403 7.33301 14 7.92996 14 8.66634V13.333C14 14.0694 13.403 14.6663 12.6667 14.6663H3.33333C2.59695 14.6663 2 14.0694 2 13.333V8.66634C2 7.92996 2.59695 7.33301 3.33333 7.33301Z" stroke="#4D545E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     );
 };
@@ -304,9 +304,9 @@ export const LockIcon = ({ activeTab }) => {
 export const CompeteIcon = ({ activeTab }) => {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path className={`${activeTab === "third" ? "fill-white" : ""} group-hover:fill-white transition-all duration-300`} d="M4.0001 1.59961L6.86873 4.46824L4.46873 6.86824L1.6001 3.99961V1.59961H4.0001Z" fill="#4D545E" />
-            <path className={`${activeTab === "third" ? "fill-white" : ""} group-hover:fill-white transition-all duration-300`} d="M6.96578 11.4339L8.16578 12.6339L7.03441 13.7653L5.2001 11.931L3.99827 13.1328C3.99948 13.1549 4.0001 13.1772 4.0001 13.1996C4.0001 13.8624 3.46284 14.3996 2.8001 14.3996C2.13736 14.3996 1.6001 13.8624 1.6001 13.1996C1.6001 12.5369 2.13736 11.9996 2.8001 11.9996C2.82251 11.9996 2.84479 12.0002 2.8669 12.0014L4.06873 10.7996L2.23441 8.96529L3.36578 7.83392L4.56578 9.03392L12.0001 1.59961H14.4001V3.99961L6.96578 11.4339Z" fill="#4D545E" />
-            <path className={`${activeTab === "third" ? "fill-white" : ""} group-hover:fill-white transition-all duration-300`} d="M13.2001 14.3996C12.5374 14.3996 12.0001 13.8624 12.0001 13.1996C12.0001 13.1772 12.0007 13.1549 12.0019 13.1328L9.66873 10.7996L12.6344 7.83392L13.7658 8.96529L11.9315 10.7996L13.1333 12.0014C13.1554 12.0002 13.1777 11.9996 13.2001 11.9996C13.8628 11.9996 14.4001 12.5369 14.4001 13.1996C14.4001 13.8624 13.8628 14.3996 13.2001 14.3996Z" fill="#4D545E" />
+            <path className={`${activeTab === "myGame" ? "fill-white" : ""} group-hover:fill-white transition-all duration-300`} d="M4.0001 1.59961L6.86873 4.46824L4.46873 6.86824L1.6001 3.99961V1.59961H4.0001Z" fill="#4D545E" />
+            <path className={`${activeTab === "myGame" ? "fill-white" : ""} group-hover:fill-white transition-all duration-300`} d="M6.96578 11.4339L8.16578 12.6339L7.03441 13.7653L5.2001 11.931L3.99827 13.1328C3.99948 13.1549 4.0001 13.1772 4.0001 13.1996C4.0001 13.8624 3.46284 14.3996 2.8001 14.3996C2.13736 14.3996 1.6001 13.8624 1.6001 13.1996C1.6001 12.5369 2.13736 11.9996 2.8001 11.9996C2.82251 11.9996 2.84479 12.0002 2.8669 12.0014L4.06873 10.7996L2.23441 8.96529L3.36578 7.83392L4.56578 9.03392L12.0001 1.59961H14.4001V3.99961L6.96578 11.4339Z" fill="#4D545E" />
+            <path className={`${activeTab === "myGame" ? "fill-white" : ""} group-hover:fill-white transition-all duration-300`} d="M13.2001 14.3996C12.5374 14.3996 12.0001 13.8624 12.0001 13.1996C12.0001 13.1772 12.0007 13.1549 12.0019 13.1328L9.66873 10.7996L12.6344 7.83392L13.7658 8.96529L11.9315 10.7996L13.1333 12.0014C13.1554 12.0002 13.1777 11.9996 13.2001 11.9996C13.8628 11.9996 14.4001 12.5369 14.4001 13.1996C14.4001 13.8624 13.8628 14.3996 13.2001 14.3996Z" fill="#4D545E" />
         </svg>
 
     );

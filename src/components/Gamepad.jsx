@@ -1,5 +1,5 @@
 import React from 'react'
-import { ApexIcon, FortniteIcon, RocketLeagueIcon, ValorantIcon } from './Icons'
+import { ApexIcon, FortniteIcon, RocketLeagueIcon, ValorantIcon } from './common/Icons'
 
 const Gamepad = ({setShow}) => {
     return (
