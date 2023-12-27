@@ -8,7 +8,7 @@ import Login from '../form/Login'
 import SelectRegion from '../SelectRegion'
 import Wallet from '../Wallet'
 import Notifications from '../Notifications'
-import ProfileView from '../setting/ProfileView'
+import ProfileView from '../profile/ProfileView'
 import Gamepad from '../Gamepad'
 
 const Header = () => {
@@ -138,11 +138,11 @@ const Header = () => {
                     </div>
                 </div>
             </nav >
-            {activeButton ? <Login setActiveButton={setActiveButton} /> : ''}
+            {activeButton ? <Login activeButton={activeButton} setActiveButton={setActiveButton} /> : ''}
             {show ? <Gamepad setShow={setShow} /> : ''}
             {location ? <SelectRegion setLocation={setLocation} /> : ''}
             {walletActive ? <Wallet setWalletActive={setWalletActive} /> : ''}
-            {activeBellIcon ? <Notifications setActiveBellIcon={setActiveBellIcon} /> : ''}
+            {activeBellIcon ? <Notifications activeBellIcon={activeBellIcon} setActiveBellIcon={setActiveBellIcon} /> : ''}
             {activeProfile ? <ProfileView setActiveProfile={setActiveProfile} /> : ''}
         </>
     )

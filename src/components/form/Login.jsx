@@ -1,24 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CrossIcon, EyeCloseIcon, EyeIcon } from '../common/Icons'
 import Link from 'next/link'
 import Signup from './Signup'
 import { loginIconData } from '../common/Helper'
 
 
-const Login = ({ setActiveButton }) => {
+const Login = ({ setActiveButton, activeButton }) => {
     const [show, setShow] = useState('password');
     const [showLogin, setShowLogin] = useState(false);
 
     const toggleInputType = () => {
         setShow((prevType) => (prevType === 'password' ? 'text' : 'password'));
     };
+    useEffect(() => {
+        if (activeButton) {
+            document.body.classList.add('overflow-hidden');
+        } else {
+            document.body.classList.remove('overflow-hidden');
+        }
+        return () => {
+            document.body.classList.remove('overflow-hidden');
+        };
+    }, [activeButton]);
 
     return (
         <>
-            <div className='absolute top-0 w-full h-full'>
+            <div className='absolute top-0 w-full h-full transition-all duration-1000'>
                 <div onClick={() => setActiveButton(false)} className='absolute bg-black opacity-[0.4] z-20 w-full min-h-full h-full top-0 start-0'></div>
-                <div className="container max-w-[1440px] xl:px-6 mx-auto py-3 h-full flex justify-center items-center">
-                    <div className="!max-w-[480px] !w-full bg-black-500 rounded-xl mt-14 relative z-30">
+                <div className="container max-w-[1440px] xl:px-6 mx-auto sm:py-3 p-0 h-full flex justify-center items-end sm:items-center">
+                    <div className={`!max-w-[480px] !w-full bg-black-500 rounded-xl mt-14 relative z-30 `}>
                         <div className="flex justify-between items-center px-4 py-3 border-b-[1px] border-lightBlack">
                             <p className='uppercase font-bold leading-4 text-white text-md font-normalidad'>Login</p>
                             <span onClick={() => setActiveButton(false)} className='group'><CrossIcon /></span>
@@ -41,7 +51,7 @@ const Login = ({ setActiveButton }) => {
                                     <input id='email' required className='autofill:bg-black w-full mt-2 mb-4 py-3 px-4 rounded-xl bg-black text-black-400 placeholder:text-black-400 focus:outline-none font-normalidad font-normal leading-4 tracking-[0.14px] text-sm' type="email" placeholder='Your email here' />
                                     <label htmlFor='password' className='text-white font-normalidad font-normal leading-6 tracking-[0.16px] '>Password</label>
                                     <div className="flex justify-between items-center bg-black mt-2 pe-4 rounded-xl">
-                                        <input type={show} id='password' required className='autofill:bg-black w-full py-4 rounded-xl ps-4 pe-3 bg-black text-black-400 placeholder:text-black-400 focus:outline-none font-normalidad font-normal leading-4 tracking-[0.14px] text-sm' placeholder='Your passwrod here' />
+                                        <input type={show} id='password' required className='autofill:bg-black w-full py-3 rounded-xl ps-4 pe-3 bg-black text-black-400 placeholder:text-black-400 focus:outline-none font-normalidad font-normal leading-4 tracking-[0.14px] text-sm' placeholder='Your passwrod here' />
                                         <span className='group' onClick={toggleInputType}>
                                             {show === 'password' ? <EyeCloseIcon /> : <EyeIcon />}
                                         </span>
@@ -60,7 +70,7 @@ const Login = ({ setActiveButton }) => {
                     </div>
                 </div>
             </div>
-            {showLogin && <Signup setActiveButton={setActiveButton} setShowLogin={setShowLogin} />}
+            {showLogin && <Signup activeButton={activeButton} setActiveButton={setActiveButton} setShowLogin={setShowLogin} />}
         </>
     )
 }

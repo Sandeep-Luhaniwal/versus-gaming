@@ -9,6 +9,7 @@ const EditProfile = () => {
     const [displayName, setDisplayName] = useState('');
     const [userName, setUserName] = useState('');
     const [uploadImage, setUploadImage] = useState(false);
+    const [newImageUpload, setnewImageUpload] = useState(false);
     //TEXTAERA COUNT NUMBER DATA
     const maxChars = 400;
 
@@ -54,14 +55,27 @@ const EditProfile = () => {
         updatedInputs[index].value = '';
         setSocialInputs(updatedInputs);
     };
-
+   
     return (
         <>
             <>
                 <p className='font-normalidad text-md font-bold leading-5 text-white uppercase'>Edit profile</p>
                 <div className="p-4 md:p-6 my-4 md:my-6 border-[1px] relative border-solid border-black-500 rounded-xl">
-                    <Image className='rounded-xl min-h-[120px]' src="/assets/images/png/login-profile-image.png" alt='profile image' width={1002} height={280} />
-                    <div onClick={() => setUploadImage(true)} className="h-14 md:h-20 w-14 md:w-20 lg:h-24 lg:w-24 xl:w-32 xl:h-32 border-[3px] border-solid cursor-pointer border-black rounded-full absolute bottom-[-8px] start-16">
+                    {/* <Image className='rounded-xl h-32 sm:h-40 md:h-48 lg:h-60 xl:h-[280px]' src="/assets/images/png/login-profile-image.png" alt='profile image' width={1002} height={280} /> */}
+                    {newImageUpload ? (
+                        <Image className='rounded-xl h-36 sm:h-40 md:h-48 lg:h-60 xl:h-[280px]'
+                            src={newImageUpload}
+                            alt='uploaded image'
+                            width={1002} height={280}
+                        />
+                    ) : (
+                            <Image className='rounded-xl h-36 sm:h-40 md:h-48 lg:h-60 xl:h-[280px]'
+                            src='/assets/images/png/login-profile-image.png'
+                            alt='profile image'
+                            width={1002} height={280}
+                        />
+                    )}
+                    <div onClick={() => setUploadImage(true)} className="h-14 md:h-20 w-14 md:w-20 lg:h-24 lg:w-24 xl:w-[120px] xl:h-[120px] border-[3px] border-solid cursor-pointer border-black rounded-full absolute bottom-[-8px] start-16">
                         <Image height={120} width={120} src="/assets/images/png/login-img.png" alt='login image' />
                         <div className="absolute top-1/2 start-1/2 translate-y-[-50%] translate-x-[-50%]">
                             <ImageIcon />
@@ -136,7 +150,7 @@ const EditProfile = () => {
                 </div>
                 <button type='submit' className="text-black my-4 sm:my-6 uppercase bg-green-yellow hover:bg-white transition-all duration-300 w-full px-6 py-4 text-center font-normalidad font-medium text-md rounded-xl tracking-[0.14px] leading-4">Save changes</button>
             </>
-            {uploadImage && <UploadNewImage setUploadImage={setUploadImage} />}
+            {uploadImage && <UploadNewImage uploadImage={uploadImage} setnewImageUpload={setnewImageUpload} setUploadImage={setUploadImage} />}
         </>
     )
 }

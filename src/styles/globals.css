@@ -33,5 +33,4 @@ input:-webkit-autofill {
 ::-webkit-scrollbar-thumb {
     background: #D4FF27;
     border-radius: 5px;
-    height: 20px !important;
 }
