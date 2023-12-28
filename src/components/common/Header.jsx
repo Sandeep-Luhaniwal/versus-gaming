@@ -42,7 +42,7 @@ const Header = () => {
 
     return (
         <>
-            <nav className='bg-lightBlack border-b-[1px] border-lightGrey overflow-hidden'>
+            <nav className='bg-lightBlack border-b-[1px] border-lightGrey overflow-hidden z-[1000] sticky top-0'>
                 <div className="container max-w-[1440px] mx-auto xl:px-6">
                     <div className="flex items-center h-12 sm:h-14 justify-between w-full">
                         <div className="flex items-center h-full">
@@ -80,7 +80,28 @@ const Header = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex gap-4 sm:gap-5 xl:gap-6 items-center h-full lg:border-s-[2px] border-lightGrey lg:ps-5 xl:ps-6">
+                        <div className="flex items-center h-full">
+                            <div className="lg:border-e-[2px] border-lightGrey h-full flex items-center pe-4">
+                                <button onClick={() => setActiveButton(true)} className='hidden lg:flex sm:tracking-[0.14px] sm:leading-6 items-center h-10 text-black bg-green-yellow p-2 sm:py-3 sm:ps-3 sm:pe-4 font-normalidad text-md uppercase font-medium rounded-xl hover:bg-white duration-300 group transition-all'>
+                                    B2B services
+                                </button>
+                            </div>
+                            <button onClick={() => setActiveButton(true)} className='hidden ms-4 lg:flex sm:tracking-[0.14px] sm:leading-6 items-center h-10 text-black bg-green-yellow p-2 sm:py-3 sm:ps-3 sm:pe-4 font-normalidad text-md uppercase font-medium rounded-xl hover:bg-white duration-300 group transition-all'>
+                                Log In
+                            </button>
+                            <button onClick={() => setActiveButton(true)} className='lg:ms-2 flex text-center sm:tracking-[0.14px] sm:leading-6 items-center h-10 text-black bg-green-yellow p-2 sm:py-3 sm:ps-3 sm:pe-4 font-normalidad text-md uppercase font-medium rounded-xl hover:bg-white duration-300 group transition-all'>
+                                sign up
+                            </button>
+                            <div className="lg:hidden ms-8">
+                                <div className={`${menu ? "hidden" : ""} cursor-pointer group`} onClick={() => setMenu(true)}>
+                                    <MenuIcon />
+                                </div>
+                                <div className={`${menu ? "block relative z-[100]" : "hidden"} group`} onClick={() => setMenu(false)}>
+                                    <CrossIcon />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hidden gap-4 sm:gap-5 xl:gap-6 items-center h-full lg:border-s-[2px] border-lightGrey lg:ps-5 xl:ps-6">
                             <button onClick={() => setActiveButton(true)} className='hidden sm:flex sm:tracking-[0.14px] sm:leading-6 items-center gap-1 sm:gap-2 text-black bg-green-yellow p-2 sm:py-3 sm:ps-3 sm:pe-4 font-normalidad text-sm uppercase font-medium rounded-xl hover:bg-white duration-300 group transition-all'>
                                 <VpagelogoIcon />
                                 membership
@@ -96,13 +117,9 @@ const Header = () => {
                                 <Image src="/assets/images/png/login-img.png" height={24} width={24} alt='login page image' className='border-[1px] rounded-full border-lightBlack' />
                                 <DownArrowIcon activeProfile={activeProfile} width={8} height={6} />
                             </div>
-                            <div className="lg:hidden">
-                                <div onClick={() => setMenu(true)}>
-                                    <MenuIcon />
-                                </div>
-                            </div>
                         </div>
-                        <div className={`${menu ? "fixed gap-5 w-full h-full bg-black flex flex-col top-0 start-0 z-50 min-h-full transition-all justify-center items-center" : "fixed top-0 left-[-100%] transition-all"} lg:hidden`}>
+                        <div className={`${menu ? "fixed gap-5 h-[calc(100vh-49px)] sm:h-[calc(100vh-57px)] w-[300px] bg-red-500 flex flex-col top-[49px] sm:top-[57px] end-0 z-50 transition-all justify-center items-center" : "fixed end-[-100%] transition-all h-[calc(100vh-49px)] sm:h-[calc(100vh-57px)] top-[49px] sm:top-[57px]"} lg:hidden`}>
+                            {/* <div onClick={() => setMenu(false)} className='absolute bg-black opacity-[0.4] z-20 w-full min-h-full h-full top-0 start-0'></div> */}
                             <div className="flex gap-4">
                                 <div onClick={() => { setShow(true); setMenu(false) }} className={`flex gap-2 items-center cursor-pointer group`}>
                                     <GamepadIcon show={show} />
@@ -131,9 +148,7 @@ const Header = () => {
                                 <VpagelogoIcon />
                                 membership
                             </button>
-                            <div className="lg:hidden absolute end-6 top-6" onClick={() => setMenu(false)}>
-                                <CrossIcon />
-                            </div>
+
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ export const index = () => {
     return (
         <>
             <Header/>
-            <h1>Compete</h1>
+            <h1 className='text-white text-center'>Compete</h1>
         </>
     )
 }

@@ -1,8 +1,10 @@
 //MENU ICON
 export const MenuIcon = () => {
     return (
-        <svg className="cursor-pointer w-6 h-6" width="34" height="28" viewBox="0 0 34 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0V4.01722H34V0H0ZM0 11.9311V15.9484H34V11.9311H0ZM0 23.9828V28H34V23.9828H0Z" fill="white" />
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 12H24" stroke="#4D545E" strokeWidth="3" />
+            <path d="M0 5H24" stroke="#4D545E" strokeWidth="3" />
+            <path d="M8 19H24" stroke="#4D545E" strokeWidth="3" />
         </svg>
     );
 };

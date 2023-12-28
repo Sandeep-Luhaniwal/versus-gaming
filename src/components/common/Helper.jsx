@@ -4,7 +4,7 @@ import { TwitchIcon, DiscordIcon, GoogleIcon, TeamIcon, CompetitionIcon, MegaPho
 export const navLinks = [
     {
         navLink: "compete",
-        url: "/",
+        url: "/compete",
     },
     {
         navLink: "watch",
