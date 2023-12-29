@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { CrossIcon, EyeCloseIcon, EyeIcon } from '../common/Icons'
 import { loginIconData } from '../common/Helper'
 import Link from 'next/link'
+import Login from './Login'
 
-const Signup = ({ setActiveButton, setShowLogin, activeButton }) => {
+const Signup = ({ setActiveSingUp, setActiveButton, activeSignUp }) => {
     const [show, setShow] = useState('password');
     const [confirm, setConfirm] = useState('password');
 
@@ -14,7 +15,7 @@ const Signup = ({ setActiveButton, setShowLogin, activeButton }) => {
         setConfirm((prevType) => (prevType === 'password' ? 'text' : 'password'));
     };
     useEffect(() => {
-        if (activeButton) {
+        if (activeSignUp) {
             document.body.classList.add('overflow-hidden');
         } else {
             document.body.classList.remove('overflow-hidden');
@@ -22,17 +23,19 @@ const Signup = ({ setActiveButton, setShowLogin, activeButton }) => {
         return () => {
             document.body.classList.remove('overflow-hidden');
         };
-    }, [activeButton]);
+    }, [activeSignUp]);
     return (
         <>
-            <div className='absolute top-0 w-full h-full transition-all duration-1000'>
-                <div onClick={() => setActiveButton(false)} className='absolute bg-black opacity-[0.4] z-20 w-full min-h-full h-full top-0 start-0'></div>
+            <div
+                className={`fixed z-[210] top-0 w-full min-h-screen h-full transition-all duration-300`}
+            >
+                <div onClick={() => { setActiveSingUp(false) }} className='absolute bg-black opacity-[0.4] z-20 w-full min-h-full h-full top-0 start-0'></div>
                 <div className="container max-w-[1440px] xl:px-6 mx-auto sm:py-3 p-0 h-full flex justify-center items-end sm:items-center">
-                    <div className={`!max-w-[480px] !w-full bg-black-500 rounded-xl sm:mt-14 relative z-30 `}>
-                        <div className="overflow-scroll scroll-smooth !p-0 !mb-0 h-[520px] ">
-                            <div className="flex justify-between items-center px-4 py-3 border-b-[1px] border-lightBlack">
+                    <div className={`!max-w-[480px] !w-full bg-black-500 rounded-xl sm:mt-14 relative z-30 overflow-hidden`}>
+                        <div className="overflow-y-scroll scroll-smooth h-[312px] md:h-[520px] ">
+                            <div className="flex justify-between items-center bg-black-500  px-4 py-3 border-b-[1px] border-lightBlack sticky top-0 z-[200]">
                                 <p className='uppercase font-bold leading-4 text-white text-md font-normalidad'>Sing up</p>
-                                <span onClick={() => setActiveButton(false)} className='group'><CrossIcon /></span>
+                                <span onClick={() => setActiveSingUp(false)} className='group'><CrossIcon /></span>
                             </div>
                             <div className="p-4 sm:p-6">
                                 <div className="w-full flex gap-4 pb-4 sm:pb-6 border-b-[1px] border-lightBlack">
@@ -74,12 +77,12 @@ const Signup = ({ setActiveButton, setShowLogin, activeButton }) => {
                                     <button type='submit' className="text-black my-4 sm:my-6 uppercase bg-green-yellow hover:bg-white transition-all duration-300 w-full px-6 py-4 text-center font-normalidad font-medium text-md rounded-xl tracking-[0.14px] leading-4">Sign Up</button>
                                 </form>
                                 <p className='text-center text-white font-normalidad font-sm font-normal tracking-[0.14px] leading-4'>Already have an account?{" "}
-                                    <span className='hover:opacity-[0.4] transition-all duration-300 text-green-yellow cursor-pointer' onClick={() => setShowLogin(false)}>
+                                    <span className='hover:opacity-[0.4] transition-all duration-300 text-green-yellow cursor-pointer' onClick={() => { setActiveButton(true);  setActiveSingUp(false)}}>
                                         Log in.
                                     </span>
                                 </p>
                             </div>
-                       </div>
+                        </div>
                     </div>
                 </div>
             </div>

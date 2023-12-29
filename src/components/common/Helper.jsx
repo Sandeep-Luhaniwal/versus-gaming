@@ -1,22 +1,48 @@
-import { TwitchIcon, DiscordIcon, GoogleIcon, TeamIcon, CompetitionIcon, MegaPhoneIcon, TrophyIcon, SettingIcon, EditProfileIcon, LockIcon, CompeteIcon, TwitterIcon, YoutubeIcon, InstagramIcon } from "./Icons";
+import { TwitchIcon, DiscordIcon, GoogleIcon, TeamIcon, CompetitionIcon, MegaPhoneIcon, TrophyIcon, SettingIcon, EditProfileIcon, LockIcon, CompeteIcon, TwitterIcon, YoutubeIcon, InstagramIcon, WatchIcon, NewsIcon, StatsIcon } from "./Icons";
 
 // NAVLINK DATA START
 export const navLinks = [
     {
+        icon: <CompeteIcon />,
         navLink: "compete",
         url: "/compete",
     },
     {
+        icon: <WatchIcon />,
         navLink: "watch",
         url: "/watch",
     },
     {
+        icon: <NewsIcon />,
         navLink: "news",
         url: "/news",
     },
     {
+        style: "text-darkGrey px-2 cursor-auto py-[2px] text-xs font-normalidad font-normal bg-lightGrey rounded-[40px] capitalize",
+        icon: <StatsIcon />,
+        title: "Coming Soon",
         navLink: "stats",
         url: "/stats",
+    },
+];
+// NAVLINK DATA END
+// HEADER MOBILE DATA START
+export const headermobileData = [
+    {
+        title: "About Us",
+        url: "/about-us",
+    },
+    {
+        title: "Terms of use",
+        url: "/terms-use",
+    },
+    {
+        title: "Privacy Policy",
+        url: "/privacy-policy",
+    },
+    {
+        title: "Contact",
+        url: "/contact",
     },
 ];
 // NAVLINK DATA END

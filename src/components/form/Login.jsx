@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { CrossIcon, EyeCloseIcon, EyeIcon } from '../common/Icons'
 import Link from 'next/link'
-import Signup from './Signup'
 import { loginIconData } from '../common/Helper'
+import Signup from './Signup'
 
 
-const Login = ({ setActiveButton, activeButton }) => {
+const Login = ({ setActiveButton, activeButton, setActiveSingUp }) => {
     const [show, setShow] = useState('password');
-    const [showLogin, setShowLogin] = useState(false);
 
     const toggleInputType = () => {
         setShow((prevType) => (prevType === 'password' ? 'text' : 'password'));
@@ -25,10 +24,11 @@ const Login = ({ setActiveButton, activeButton }) => {
 
     return (
         <>
-            <div className='absolute top-0 w-full h-full transition-all duration-1000'>
-                <div onClick={() => setActiveButton(false)} className='absolute bg-black opacity-[0.4] z-20 w-full min-h-full h-full top-0 start-0'></div>
-                <div className="container max-w-[1440px] xl:px-6 mx-auto sm:py-3 p-0 h-full flex justify-center items-end sm:items-center">
-                    <div className={`!max-w-[480px] !w-full bg-black-500 rounded-xl mt-14 relative z-30 `}>
+            <div
+                className={`fixed w-full top-0 h-full end-0 z-[201] transition-all`}>
+                <div onClick={() => setActiveButton(false)} className='absolute bg-black opacity-40 z-[10] w-full min-h-full h-full top-0 start-0 overflow-hidden'></div>
+                <div className='flex justify-center items-end md:items-center z-40 mt-[49px] sm:mt-[57px] w-full overflow-y-scroll h-[calc(100vh-49px)] sm:h-[calc(100vh-57px)]'>
+                    <div className={`!max-w-[480px] !w-full bg-black-500 rounded-xl relative z-30`}>
                         <div className="flex justify-between items-center px-4 py-3 border-b-[1px] border-lightBlack">
                             <p className='uppercase font-bold leading-4 text-white text-md font-normalidad'>Login</p>
                             <span onClick={() => setActiveButton(false)} className='group'><CrossIcon /></span>
@@ -62,15 +62,15 @@ const Login = ({ setActiveButton, activeButton }) => {
                                 </div>
                                 <button type='submit' className="text-black my-4 sm:my-6 uppercase bg-green-yellow hover:bg-white transition-all duration-300 w-full px-6 py-4 text-center font-normalidad font-medium text-md rounded-xl tracking-[0.14px] leading-4">login</button>
                             </form>
-                            <p className='text-center text-white font-normalidad font-sm font-normal tracking-[0.14px] leading-4'>Don&apos;t have an account?
-                                {" "}<span className='hover:opacity-[0.4] transition-all duration-300 text-green-yellow cursor-pointer' onClick={() => setShowLogin(true)}>
+                            <p className='text-center text-white font-normalidad font-medium tracking-[0.14px] leading-4'>Don&apos;t have an account?
+                                {" "}<span className='hover:opacity-[0.4] transition-all duration-300 text-green-yellow cursor-pointer'
+                                    onClick={() => { setActiveSingUp(true); setActiveButton(false) }}>
                                     Sign Up.
                                 </span></p>
                         </div>
                     </div>
                 </div>
             </div>
-            {showLogin && <Signup activeButton={activeButton} setActiveButton={setActiveButton} setShowLogin={setShowLogin} />}
         </>
     )
 }
